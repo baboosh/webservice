@@ -18,8 +18,9 @@ async def issue_opened_event(event, gh, *args, **kwargs):
     url = event.data["issue"]["comments_url"]  # Get the url to comment from the event data
     author = event.data["issue"]["user"]["login"]  # Get the author that issued from the event data
 
-    message = f"Thanks for the report @{author}! I will look into it ASAP! (I'm a bot)."  # Constructed Message
+    message = f"GO fuck yourself my code is PERFECt go away {author}"  # Constructed Message
     await gh.post(url, data={"body": message})  # Post the comment with the message.
+
 
 async def main(request):
     body = await request.read()
