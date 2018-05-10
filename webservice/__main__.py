@@ -1,5 +1,6 @@
 import os
 import aiohttp
+from datetime import datetime
 
 from aiohttp import web
 
@@ -19,7 +20,6 @@ async def issue_opened_event(event, gh, *args, **kwargs):
 
     message = f"Thanks for the report @{author}! I will look into it ASAP! (I'm a bot)."  # Constructed Message
     await gh.post(url, data={"body": message})  # Post the comment with the message.
-
 
 async def main(request):
     body = await request.read()
